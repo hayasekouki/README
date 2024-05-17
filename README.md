@@ -61,8 +61,7 @@ MVPリリース時には、ログインなしで質問集が見れることと�
 
 
 ### 画面遷移図
-Figma：https://www.figma.com/board/iFfCDOqKxESM8WV914xRYA/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%AE%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=KdmuAeRT6jAik2BS-0
-
+Figma：https://www.figma.com/design/2gFmKl5PsMxVXEdGqpz1H4/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%AE%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=fGWwKeHm6hZA8py6-0
 ### READMEに記載した機能
 - [ ] ユーザー登録機能
 - [ ] ログイン機能
@@ -70,6 +69,7 @@ Figma：https://www.figma.com/board/iFfCDOqKxESM8WV914xRYA/%E5%8D%92%E6%A5%AD%E5
 - [ ] メールアドレス変更機能
 - [ ] 質問投稿機能
 - [ ] 質問閲覧機能
+- [ ] 質問詳細機能
 - [ ] 質問編集機能
 - [ ] 質問削除機能
 - [ ] コメント投稿機能
