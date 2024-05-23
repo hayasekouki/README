@@ -88,3 +88,6 @@ Figma：https://www.figma.com/design/2gFmKl5PsMxVXEdGqpz1H4/%E5%8D%92%E6%A5%AD%E
 直接変更できるものではなく、一旦メールなどを介して専用のページで変更する画面遷移になっているか？
 - [ ] メールアドレス
 - [ ] パスワード
+
+### ER図
+https://i.gyazo.com/7bab991cdd0402e5bf202e316d2b8aed.png
