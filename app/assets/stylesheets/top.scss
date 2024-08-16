@@ -1,0 +1,28 @@
+//フッターの文字の間を空ける用
+footer {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    .nav-item {
+      &:not(:last-child) {
+        margin-right: 20px; // ここでリストアイテム間のスペースを調整
+      }
+    }
+  }
+}
+
+// ピンク色のボタンスタイル
+.btn-pink {
+  background-color: #f06292; // ピンク色の背景
+  color: #fff; // テキスト色を白に設定
+  border: none; // ボーダーを削除
+
+  &:hover {
+    background-color: #ec407a; // ホバー時のピンク色を少し濃くする
+    color: #fff; // テキスト色を白に設定
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(244, 67, 54, 0.5); // フォーカス時のボックスシャドウ
+  }
+}

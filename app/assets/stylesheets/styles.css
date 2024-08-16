@@ -1,0 +1,32 @@
+.faq {
+  list-style-type: none;
+  padding: 0;
+}
+.question {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.like-button {
+  cursor: pointer;
+  color: #666;
+  margin-right: 10px;
+}
+.liked {
+  color: #007bff; /* いいねされた時の色 */
+}
+
+.recommendButton {
+  cursor: pointer;
+  color: #666;
+  margin-right: 10px;
+}
+
+.recommended {
+  color: #28a745; /* おすすめされた時の色 */
+}
+
+.recommendCount {
+  margin-left: 5px;
+}
