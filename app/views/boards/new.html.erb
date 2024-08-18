@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1>タイトル</h1>
+      <%= form_with model: @board, class: "new_board" do |f| %>
+        <div class="mb-3">
+          <%= f.label :title,"タイトル", for: "board_title" %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :body,"本文", for: "board_body" %>
+          <%= f.text_area :body, class: "form-control", rows: "10" %>
+        </div>
+        <%= f.submit "送信", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
