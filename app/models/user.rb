@@ -7,6 +7,12 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
-  #ユーザーが削除のときに、ユーザーにBoardも一緒に削除（一応あるあとで消すかも)
+  #ユーザーが削除のときに、ユーザーにBoardも一緒に削除
   has_many :boards, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+  #コメント作成者にだけ、編集と削除ボタンを表示
+  def own?(object)
+    id == object&.user_id
+  end
 end
