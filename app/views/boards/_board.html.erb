@@ -5,10 +5,10 @@
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1"><%= link_to board.title, board_path(board) %></h5>
           <div>
-            <%= link_to '#', id: "button-edit-#{board.id}", class: 'btn btn-outline-secondary btn-sm' do %>
+            <%= link_to edit_board_path(board), id: "button-edit-#{board.id}", class: 'btn btn-outline-secondary btn-sm' do %>
               <i class="bi bi-pencil-fill"></i>
             <% end %>
-            <%= link_to '#', id: "button-delete-#{board.id}", method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-outline-danger btn-sm' do %>
+            <%= link_to confirm_destroy_board_path(board), id: "button-delete-#{board.id}", method: :get, data: { confirm: '削除しますか？' }, class: 'btn btn-outline-danger btn-sm' do %>
               <i class="bi bi-trash-fill"></i>
             <% end %>
           </div>

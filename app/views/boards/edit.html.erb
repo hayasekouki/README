@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1>掲示板を編集</h1>
+      <%= form_with model: @board, class: "edit_board" do |f| %>
+        <div class="mb-3">
+          <%= f.label :title, "タイトル", for: "board_title" %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :body, "本文", for: "board_body" %>
+          <%= f.text_area :body, class: "form-control", rows: "10" %>
+        </div>
+        <div class="d-flex justify-content-between">
+          <%= f.submit "更新", class: "btn btn-primary" %>
+          <%= link_to 'キャンセル', board_path(@board), class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

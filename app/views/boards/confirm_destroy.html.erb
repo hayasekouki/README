@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3 class="card-title">掲示板削除確認</h3>
+          <p>本当にこの掲示板を削除しますか？</p>
+          </div>
+          <div class="card-body">
+
+          <%= form_with url: board_path(@board), method: :delete do %>
+            <div class="d-flex justify-content-between">
+            <%= submit_tag '削除', class: 'btn btn-danger' %>
+            <%= link_to 'キャンセル', board_path(@board), class: 'btn btn-secondary' %>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-footer text-center">
+        <p>質問が解決しても消さないことで他の人のためになるので消さないでくれるとありがたいです。</p>
+      </div>
+    </div>
+  </div>
+</div>

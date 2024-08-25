@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: [:edit, :update, :show, :destroy, :confirm_destroy]
+
   def index
     @boards = Board.all.includes(:user)
   end
@@ -24,9 +26,35 @@ class BoardsController < ApplicationController
     @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
+  def edit
+  end
+
+  def update
+    if @board.update(board_params)
+      flash[:info] = '掲示板が更新されました'
+      redirect_to @board
+    else
+      render :edit
+    end
+  end
+
+  def confirm_destroy
+    # @boardはset_boardで設定済み
+  end
+
+  def destroy
+    @board.destroy!
+    flash[:success] = '掲示板を削除しました'
+    redirect_to boards_path
+  end
+
   private
 
   def board_params
     params.require(:board).permit(:title, :body)
+  end
+
+  def set_board
+    @board = Board.find(params[:id])
   end
 end
