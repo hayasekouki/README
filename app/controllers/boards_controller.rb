@@ -2,7 +2,8 @@ class BoardsController < ApplicationController
   before_action :set_board, only: [:edit, :update, :show, :destroy, :confirm_destroy]
 
   def index
-    @boards = Board.all.includes(:user)
+    @search = Board.ransack(params[:q])
+    @boards = @search.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
