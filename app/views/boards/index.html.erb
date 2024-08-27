@@ -1,15 +1,7 @@
 <div class="container pt-3">
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
-      <!-- 検索フォーム -->
-      <form>
-        <div class="input-group mb-3">
-          <input id="search-field" name="search" class="form-control" placeholder="検索ワード" type="search"/>
-          <div class="input-group-append">
-            <input type="submit" value="検索" class="btn btn-primary"/>
-          </div>
-        </div>
-      </form>
+      <%= render 'search_form', q: @search, url: boards_path %>
     </div>
   </div>
 
@@ -23,6 +15,7 @@
           <div class="mb-3">掲示板がありません</div>
         <% end %>
       </div>
+      <%= paginate @boards, theme: 'bootstrap-5' %>
     </div>
   </div>
 </div>

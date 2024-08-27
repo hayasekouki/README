@@ -6,6 +6,12 @@ gem 'sorcery'
 
 gem 'draper'
 
+gem 'ransack'
+
+gem 'kaminari'
+
+gem 'bootstrap5-kaminari-views'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 

@@ -22,6 +22,7 @@ module Myapp
     # in config/environments, which are processed later.
     #
     config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja  # 日本語の言語設定を追加,ページネーション用に使用
 
     # config.eager_load_paths << Rails.root.join("extras")
   end
