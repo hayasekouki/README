@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   end
   resources :password_resets, only: %i[new create edit update]
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+  post 'update_like_count', to: 'likes#update_like_count'
 end
