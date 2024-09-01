@@ -18,26 +18,22 @@ likeButtons.forEach(button => {
 
 // サーバーにいいね数を送信する関数
 function sendLikeCountToServer(questionId, count) {
-  fetch('/update-like-count', {
+  fetch('/update_like_count', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     },
     body: JSON.stringify({
-      questionId: questionId,
-      likeCount: count
+      question_id: questionId,
+      like_count: count
     })
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('サーバーエラー');
-    }
-    return response.json();
-  })
+  .then(response => response.json())
   .then(data => {
-    console.log(data.message);
+    console.log('サーバーからのレスポンス:', data);
   })
   .catch(error => {
-    console.error(error.message);
+    console.error('エラー:', error);
   });
 }
