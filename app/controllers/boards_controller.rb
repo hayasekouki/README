@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:edit, :update, :show, :destroy, :confirm_destroy]
-  before_action :check_board_owner, only: [:confirm_destroy]
+  before_action :check_board_destroy, only: [:confirm_destroy, :destroy]
+  before_action :check_board_edit, only: [:edit, :update]
 
   def index
     @search = Board.ransack(params[:q])
@@ -60,9 +61,16 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
   end
 
-  def check_board_owner
+  def check_board_destroy
     unless @board.user_id == current_user.id
-      flash[:danger] = 'あなたにはこの掲示板を削除する権限がありません'
+      flash[:danger] = '作成した掲示板ではないので、削除できません'
+      redirect_to boards_path
+    end
+  end
+
+  def check_board_edit
+    unless @board.user_id == current_user.id
+      flash[:danger] = '作成した掲示板ではないので、編集できません'
       redirect_to boards_path
     end
   end
