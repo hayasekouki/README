@@ -1,3 +1,3 @@
 default_url_options:
-  protcol: 'https'
+  protcol: 'https',
   host: ENV['HOST_URL']
