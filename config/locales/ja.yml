@@ -6,3 +6,28 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+      board:
+        title: "タイトル"
+        body: "本文"
+    errors:
+      models:
+        board:
+          attributes:
+            title:
+              blank: "タイトルを入力してください"
+            body:
+              blank: "本文を入力してください"
+        user:
+          attributes:
+            password:
+              too_short: "パスワードは %{count} 文字以上で入力してください"
+              blank: "パスワードを入力してください"
+      messages:
+        blank: "この項目を入力してください"
+        taken: "はすでに使用されています"
+        too_short: "は短すぎます"
